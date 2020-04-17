@@ -3,7 +3,7 @@ Flat.destroy_all
 
 puts 'Generating new data...'
 10.times do
-  flat = Flat.create(
+  flat = Flat.create!(
     {
       name: Faker::App.name,
       address: Faker::Address.street_address,
