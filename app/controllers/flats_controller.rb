@@ -19,6 +19,8 @@ class FlatsController < ApplicationController
     end
   end
 
+  def show; end
+
   private
 
   def find_flat
