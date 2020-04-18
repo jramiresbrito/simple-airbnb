@@ -7,8 +7,32 @@
           <h5 class="card-title"><%= flat.name %></h5>
           <p class="card-text"><%= flat.description %></p>
         </div>
-        <div class="card-footer text-center">
-          <a href="#" class="btn btn-primary">Book</a>
+        <div class="card-footer">
+          <div class="d-flex justify-content-between">
+            <div title="Number of guests">
+              <i class="fas fa-users" style="color: #167FFB;"></i>
+              <strong><%= flat.number_of_guests %></strong>
+            </div>
+            <div title="Price per night">
+              <i class="fas fa-dollar-sign" style="color: green;"></i>
+              <strong><%= flat.price_per_night %><small class="ml-1"><i>per night</i></small></strong>
+            </div>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between">
+            <%= link_to flat_path(flat) do %>
+              <i title="More Info" class="fas fa-info-circle" style="color: #167FFB;"></i>
+            <% end %>
+
+            <%= link_to edit_flat_path(flat) do %>
+              <i title="Edit" class="fas fa-edit" style="color: #e67e22;"></i>
+            <% end %>
+            
+            <%= link_to flat_path(flat),
+                method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i title="Delete "class="fas fa-trash" style="color: #fd1015;"></i>
+            <% end %>            
+          </div>
         </div>
       </div>
     </div>
